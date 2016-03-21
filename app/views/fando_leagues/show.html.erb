@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fando_league.name %>
+</p>
+
+<p>
+  <strong>Ower of the league:</strong>
+  <%= @fando_league.user.name %>
+</p>
+
+<p>
+  <strong>Contest date:</strong>
+  <%= @fando_league.contest_date %>
+</p>
+
+<p>
+  <strong>Max user:</strong>
+  <%= @fando_league.max_user %>
+</p>
+<hr/>
+<h3>The chatroom for this league goes below</h3>
+<textarea cols="25" rows="5"></textarea>
+<hr/>
+<%= link_to 'Edit', edit_fando_league_path(@fando_league) %> |
+<%= link_to 'Back', fando_leagues_path %>

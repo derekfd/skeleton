@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fando Leagues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Contest date</th>
+      <th>Max user</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fando_leagues.each do |fando_league| %>
+      <tr>
+        <td><%= fando_league.name %></td>
+        <td><%= fando_league.user %></td>
+        <td><%= fando_league.contest_date %></td>
+        <td><%= fando_league.max_user %></td>
+        <td><%= link_to 'Show', fando_league %></td>
+        <td><%= link_to 'Edit', edit_fando_league_path(fando_league) %></td>
+        <td><%= link_to 'Destroy', fando_league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fando league', new_fando_league_path %>

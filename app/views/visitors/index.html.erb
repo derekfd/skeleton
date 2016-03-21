@@ -1,0 +1,14 @@
+<h3>Welcome To Fando Development Environment</h3>
+<h4>Today's FantasyPK Leagues</h4>
+
+<% @leagues.each do |league| %>
+<p> <%= link_to "League#{league.name}", league %>  </p>
+<% end %>
+<hr/>
+
+<h4>Current Users</h4>
+<% User.all.each do |user| %>
+<p> <%= user.name %>  </p>
+<% end %>
+
+<p><%= link_to 'All Users:', users_path %> <%= User.count %> registered</p>

@@ -1,0 +1,51 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  
+  pool: 5
+
+development:
+  <<: *default
+  database: fd_development
+  username: db_test
+  password: test12345
+  host: localhost
+  port: 5432
+test:
+  <<: *default
+  database: fd_test
+  username: db_test
+  password: test12345
+staging:
+  <<: *default
+  database: fd_staging
+  username: db_test
+  password: test12345
+  host: localhost
+  port: 5432
+production:
+  <<: *default
+  database: fd_production
+  username: db_test
+  password: test12345
+
+
+
+
+
